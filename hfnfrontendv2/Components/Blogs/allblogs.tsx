@@ -8,13 +8,13 @@ const Allblogs = () => {
         ALL BLOGS
       </h2>
       <h3 className="text-xl text-center mx-auto py-8 leading-snug md:text-3xl md:w-[60%]">
-        Here are some other great topics. It’s definitely worth a read.
+        Here are some other great topics. It&lsquo;s definitely worth a read.
       </h3>
 
       <div className=" flex flex-col justify-evenly gap-10 md:flex-wrap md:flex-row">
-        <Gencard img={"/assets/blogimg4.png"} />
-        <Gencard img={"/assets/blogimg4.png"} />
-        <Gencard img={"/assets/blogimg4.png"} />
+        <Gencard img={"/assets/blogimg4.png"} schedule={false} />
+        <Gencard img={"/assets/blogimg4.png"} schedule={false} />
+        <Gencard img={"/assets/blogimg4.png"} schedule={false} />
       </div>
 
       <div className="w-full flex justify-center">
