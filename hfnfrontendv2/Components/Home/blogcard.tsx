@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 type PageProps = {
@@ -7,7 +8,15 @@ type PageProps = {
 const Blogcard = ({ img }: PageProps) => {
   return (
     <div className="mt-10 cursor-pointer md:w-[25rem]">
-      <img src={img} alt="" className="w-full" />
+      <Image
+        width={200}
+        height={100}
+        priority={true}
+        unoptimized
+        src={img}
+        alt=""
+        className="w-full"
+      />
       <div className="text-white mt-8 px-3">
         <h3 className="text-lg">Living Healthier</h3>
         <p className="text-xs mt-4">

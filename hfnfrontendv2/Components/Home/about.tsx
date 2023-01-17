@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const About = () => {
@@ -20,18 +21,30 @@ const About = () => {
       </div>
 
       <div className="relative w-full md:h-[30rem] md:min-w-[60%] h-[20rem] overflow-x-hidden">
-        <img
+        <Image
           src="/assets/abtimg1.png"
+          width={200}
+          height={100}
+          priority={true}
+          unoptimized
           alt=""
           className="absolute w-[8rem] md:w-[13rem] top-[50%] left-[50%] translate-x-[-130%] md:translate-x-[-160%] translate-y-[-158%] z-10"
         />
-        <img
+        <Image
           src="/assets/abtimg2.png"
+          width={200}
+          height={100}
+          priority={true}
+          unoptimized
           alt=""
           className="absolute w-[17rem] md:w-[28rem] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
         />
-        <img
+        <Image
           src="/assets/abtimg3.png"
+          width={200}
+          height={100}
+          priority={true}
+          unoptimized
           alt=""
           className="absolute w-[8rem] md:w-[13rem] top-[50%] left-[50%] translate-x-[30%] md:translate-x-[60%] translate-y-[58%]"
         />

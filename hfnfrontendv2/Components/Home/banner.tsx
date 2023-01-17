@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const Banner = () => {
@@ -5,17 +6,29 @@ const Banner = () => {
     <div className="">
       <div className="h-screen overflow-y-hidden overflow-x-hidden relative">
         <div className="relative h-full">
-          <img
+          <Image
+            width={200}
+            height={100}
+            priority={true}
+            unoptimized
             src="/assets/bnrimg1.png"
             alt=""
             className="w-[10rem] md:w-[20rem] absolute top-[3rem] left-[-1.2rem]"
           />
-          <img
+          <Image
+            width={200}
+            height={100}
+            priority={true}
+            unoptimized
             src="/assets/bnrimg2.png"
             alt=""
             className="w-[10rem] md:w-[20rem] absolute top-[50%] right-0 translate-x-[1.5rem] translate-y-[-50%]"
           />
-          <img
+          <Image
+            width={200}
+            height={100}
+            priority={true}
+            unoptimized
             src="/assets/bnrimg3.png"
             alt=""
             className="w-[10rem] md:w-[20rem] absolute bottom-[-1rem] left-[3rem]"

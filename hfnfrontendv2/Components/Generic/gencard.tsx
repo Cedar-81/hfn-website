@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 type PageProp = {
@@ -8,7 +9,15 @@ type PageProp = {
 const Gencard = ({ img, schedule }: PageProp) => {
   return (
     <div className="mt-10 min-w-[20rem] pb-8 md:max-w-[20rem] h-max snap-center bg-[#00000074] rounded-3xl">
-      <img src={img} alt="" className="w-full" />
+      <Image
+        width={200}
+        height={100}
+        priority={true}
+        unoptimized
+        src={img}
+        alt=""
+        className="w-full"
+      />
       <div className="text-white mt-8 px-7">
         <h3 className="text-lg">Living Healthier</h3>
         <p className="text-xs mt-4">
