@@ -1,10 +1,9 @@
 "use client";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import React, { useEffect } from "react";
 
 const Navweb = () => {
-  const router = useRouter();
   let path = usePathname();
   useEffect(() => {
     if (path == "/") path = "/home";
@@ -30,27 +29,27 @@ const Navweb = () => {
       <div className="hidden w-[40%] h-full lg:flex justify-between items-center ">
         <div id="home" onClick={activate} className="navitem">
           <Link href={"/"}>
-            <p className="text-lg">Home</p>
+            <p className="text-lg navitem">Home</p>
           </Link>
         </div>
         <div id="about" onClick={activate} className="navitem">
           <Link href={"/about"}>
-            <p className="text-lg">About</p>
+            <p className="text-lg navitem">About</p>
           </Link>
         </div>
         <div id="blogs" onClick={activate} className="navitem">
           <Link href={"/blogs"}>
-            <p className="text-lg">Blogs</p>
+            <p className="text-lg navitem">Blogs</p>
           </Link>
         </div>
         <div id="learn" onClick={activate} className="navitem">
           <Link href={"/learn"}>
-            <p className="text-lg">Learn</p>
+            <p className="text-lg navitem">Learn</p>
           </Link>
         </div>
         <div id="events" onClick={activate} className="navitem">
           <Link href={"/events"}>
-            <p className="text-lg">Events</p>
+            <p className="text-lg navitem">Events</p>
           </Link>
         </div>
       </div>
