@@ -1,12 +1,15 @@
 import React from "react";
 
-const Info = () => {
+type PageProp = {
+  title: string;
+  buttonText: string;
+};
+
+const Info = ({ title, buttonText }: PageProp) => {
   return (
     <div className="md:flex md:items-center">
       <div className="md:w-[50%]">
-        <h4 className="text-lg font-medium mt-8 md:text-2xl">
-          Join the community.
-        </h4>
+        <h4 className="text-lg font-medium mt-8 md:text-2xl">{title}</h4>
         <p className="text-sm mt-4">
           Fusce nascetur habitasse pretium facilisi pharetra in venenatis
           suscipit aliquet curae vel neque, ultricies nec purus et class
@@ -15,7 +18,7 @@ const Info = () => {
           class proin accumsan curabitur pharetra.
         </p>
         <button className="px-8 py-2 bg-red text-white rounded-full mt-4">
-          Hop on in.
+          {buttonText}
         </button>
       </div>
 
