@@ -28,8 +28,8 @@ const useFetchBlog = (
     setStatus("loading");
     const blog__query = blog_query();
     const mostread__query = blog_query_by_views();
-    client.fetch(blog__query).then((data) => setBlogdata(data));
-    client.fetch(mostread__query).then((data) => setMostreaddata(data));
+    client.fetch(blog__query).then((data: any) => setBlogdata(data));
+    client.fetch(mostread__query).then((data: any) => setMostreaddata(data));
     setStatus("loaded");
   }, []);
 

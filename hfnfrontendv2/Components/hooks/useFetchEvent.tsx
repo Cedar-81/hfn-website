@@ -27,7 +27,7 @@ const useFetchEvent = (): [Array<data> | null, () => void, boolean] => {
   const [loadedall, setLoadedAll] = useState(true);
   useEffect(() => {
     const query = event_query();
-    client.fetch(query).then((data) => {
+    client.fetch(query).then((data: any) => {
       if (data.length == 0 || loadamt >= data.length) setLoadedAll(true);
       if (data.length > 0 && loadamt <= data.length) setLoadedAll(false);
       if (data.length > 0) {

@@ -6,7 +6,9 @@ const useFetchBlogContent = (url_slug: string) => {
   const [blogcontent, setBlogcontent] = useState<any>();
   useEffect(() => {
     const blog__content__query = blog_content_query(url_slug);
-    client.fetch(blog__content__query).then((data) => setBlogcontent(data));
+    client
+      .fetch(blog__content__query)
+      .then((data: any) => setBlogcontent(data));
   }, []);
   return [blogcontent];
 };

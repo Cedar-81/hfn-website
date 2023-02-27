@@ -25,7 +25,7 @@ const useFetchLearn = (
   useEffect(() => {
     if (!mostread) {
       const query = learn_query();
-      client.fetch(query).then((data) => {
+      client.fetch(query).then((data: any) => {
         if (data.length == 0 || loadamt >= data.length) setLoadedAll(true);
         if (data.length > 0) {
           return setLearn(data?.slice(0, loadamt));
