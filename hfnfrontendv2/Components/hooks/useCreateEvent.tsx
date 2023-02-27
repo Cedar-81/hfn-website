@@ -12,7 +12,7 @@ const useCreateEvent = () => {
       //@ts-ignore
       const val = session.user?.sub;
       const query = user_query(val);
-      client.fetch(query).then((data) => {
+      client.fetch(query).then((data: any) => {
         fetch("http://localhost:3000/api/calendar", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
