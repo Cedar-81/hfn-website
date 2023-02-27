@@ -1,6 +1,8 @@
 import "../styles/globals.css";
+import "react-tooltip/dist/react-tooltip.css";
 import Footer from "./Footer";
 import { Header } from "./Header";
+import AuthContext from "./AuthContext";
 
 export default function RootLayout({
   children,
@@ -8,13 +10,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
-      <head></head>
-      <body>
-        <Header />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <AuthContext>
+      <html>
+        <head></head>
+        <body>
+          <Header />
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </AuthContext>
   );
 }

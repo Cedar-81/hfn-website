@@ -1,43 +1,58 @@
+"use client";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+import { imageProps } from "../client";
 
 type PageProp = {
-  img: string;
+  data?: {
+    title: string;
+    summary: string;
+    image_alt_text: string;
+    image: {
+      asset: {
+        url: string;
+      };
+    };
+    url_slug: {
+      current: string;
+    };
+  };
   schedule: boolean;
 };
 
-const Gencard = ({ img, schedule }: PageProp) => {
+const Gencard = ({ data, schedule }: PageProp) => {
   return (
-    <div className="mt-10 min-w-[20rem] pb-8 md:max-w-[20rem] h-max snap-center bg-[#00000074] rounded-3xl">
-      <Image
-        width={200}
-        height={100}
-        priority={true}
-        unoptimized
-        src={img}
-        alt=""
-        className="w-full"
-      />
-      <div className="text-white mt-8 px-7">
-        <h3 className="text-lg">Living Healthier</h3>
-        <p className="text-xs mt-4">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit felis primis,
-          tristique quis class sagittis sapien sociosqu proin accumsan metus,
-          leo aliquet taciti cum vulputate orci velit eros. Montes quis suscipit
-          curae est eu netus, non habitasse ullamcorper porta fusce, dapibus
-          nulla dis primis platea. Maecenas suspendisse ultrices gravida ante
-          purus magna ultricies dapibus vitae eget, leo nascetur iaculis cursus
-          lacinia elementum primis justo penatibus, dictumst facilisis congue
-          sem ligula netus curabitur pellentesque eleifend.
-        </p>
-      </div>
+    <Link href={"blogs/" + data?.url_slug.current}>
+      <div className="mt-10 min-w-[20rem] pb-8 md:max-w-[20rem] h-max snap-center bg-[#00000074] rounded-3xl">
+        {data && (
+          <div className="h-[13rem] relative">
+            <Image
+              fill // layout="fill" prior to Next 13.0.0
+              objectFit="cover"
+              priority={true}
+              unoptimized
+              //@ts-ignore
+              src={imageProps(data).src}
+              //@ts-ignore
+              loader={imageProps(data).loader}
+              alt={data ? data?.image_alt_text : "blog image"}
+              className="w-full rounded-3xl"
+            />
+          </div>
+        )}
+        <div className="text-white mt-8 px-7">
+          <h3 className="text-lg">{data?.title}</h3>
+          <p className="text-xs mt-4">{data?.summary}</p>
+        </div>
 
-      {schedule && (
-        <button className="text-white bg-green px-10 py-2 font-medium rounded-full mt-4 mx-7 md:text-sm">
-          Schedule
-        </button>
-      )}
-    </div>
+        {schedule && (
+          <button className="text-white bg-green px-10 py-2 font-medium rounded-full mt-4 mx-7 md:text-sm">
+            Schedule
+          </button>
+        )}
+      </div>
+    </Link>
   );
 };
 

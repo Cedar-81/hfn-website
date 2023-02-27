@@ -31,3 +31,37 @@ body {
 .highlightimg {
   background-color: #00000074;
 }
+
+.mySwiper {
+  width: 100%;
+  position: relative;
+}
+
+.swiper-pagination-bullet {
+  background-color: gray;
+
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 30px !important;
+}
+
+.swiper-pagination-bullet {
+  background: rgb(183, 183, 183) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: white !important;
+}
+
+.markdown>* {
+  all: revert;
+}

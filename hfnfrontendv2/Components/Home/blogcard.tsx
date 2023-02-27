@@ -1,39 +1,43 @@
 import Image from "next/image";
 import React from "react";
+import { imageProps } from "../client";
 
 type PageProps = {
   img: string;
+  data?: {
+    title: string;
+    summary: string;
+    image_alt_text: string;
+    image: {
+      asset: {
+        url: string;
+      };
+    };
+  };
 };
 
-const Blogcard = ({ img }: PageProps) => {
+const Blogcard = ({ img, data }: PageProps) => {
   return (
     <div className="mt-10 cursor-pointer md:w-[25rem]">
-      <Image
-        width={200}
-        height={100}
-        priority={true}
-        unoptimized
-        src={img}
-        alt=""
-        className="w-full"
-      />
+      {data && (
+        <div className="h-[17rem] w-full relative">
+          <Image
+            fill // layout="fill" prior to Next 13.0.0
+            objectFit="cover"
+            priority={true}
+            unoptimized
+            //@ts-ignore
+            src={imageProps(data).src}
+            //@ts-ignore
+            loader={imageProps(data).loader}
+            alt={data ? data?.image_alt_text : "blog image"}
+            className="w-full rounded-3xl"
+          />
+        </div>
+      )}
       <div className="text-white mt-8 px-3">
-        <h3 className="text-lg">Living Healthier</h3>
-        <p className="text-xs mt-4">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit felis primis,
-          tristique quis class sagittis sapien sociosqu proin accumsan metus,
-          leo aliquet taciti cum vulputate orci velit eros. Montes quis suscipit
-          curae est eu netus, non habitasse ullamcorper porta fusce, dapibus
-          nulla dis primis platea. Maecenas suspendisse ultrices gravida ante
-          purus magna ultricies dapibus vitae eget, leo nascetur iaculis cursus
-          lacinia elementum primis justo penatibus, dictumst facilisis congue
-          sem ligula netus curabitur pellentesque eleifend. Fusce nascetur
-          habitasse pretium facilisi pharetra in venenatis suscipit aliquet
-          curae vel neque, ultricies nec purus et class faucibus integer lacus
-          donec vitae. Eget montes conubia donec phasellus arcu per, in nam eros
-          scelerisque suspendisse porta morbi, class proin accumsan curabitur
-          pharetra.
-        </p>
+        <h3 className="text-lg">{data?.title}</h3>
+        <p className="text-xs mt-4">{data?.summary}</p>
       </div>
     </div>
   );

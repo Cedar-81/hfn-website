@@ -1,7 +1,10 @@
+import Link from "next/link";
 import React from "react";
+import useFetchBlog from "../hooks/useFetchBlog";
 import Blogcard from "./blogcard";
 
 const Blogs = () => {
+  const [allblogs, loadmore, loadedall, allblogdata] = useFetchBlog(false);
   return (
     <div className="px-[5%] bg-black py-[5rem] md:py-[10rem] mt-[5rem]">
       <div className="text-center text-white">
@@ -13,10 +16,11 @@ const Blogs = () => {
       </div>
 
       <div className="mt-[4rem] md:flex md:gap-[5rem] md:flex-wrap md:justify-evenly">
-        <Blogcard img={"/assets/blogimg1.png"} />
-        <Blogcard img={"/assets/blogimg2.png"} />
-        <Blogcard img={"/assets/blogimg3.png"} />
-        <Blogcard img={"/assets/blogimg4.png"} />
+        {allblogdata?.map(({ data }: any) => (
+          <Link href={"blogs/" + data.url_slug.current}>
+            <Blogcard img="something" data={data} />
+          </Link>
+        ))}
       </div>
     </div>
   );

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { use, useState } from "react";
+import useFetchEvent from "../hooks/useFetchEvent";
 import Eventcard from "./eventcard";
 
 const Events = () => {
+  const [allevents, loadmore, loadedall] = useFetchEvent();
   return (
     <div className="px-[5%] pt-[4rem] pb-[6rem] ">
       <div className="text-center mt-[5rem]">
@@ -13,10 +15,9 @@ const Events = () => {
       </div>
 
       <div className="mt-[4rem] md:flex md:gap-[5rem] md:flex-wrap md:justify-evenly">
-        <Eventcard img={"/assets/eventimg1.png"} />
-        <Eventcard img={"/assets/eventimg2.png"} />
-        <Eventcard img={"/assets/eventimg3.png"} />
-        <Eventcard img={"/assets/eventimg4.png"} />
+        {allevents?.map((event) => (
+          <Eventcard data={event} />
+        ))}
       </div>
     </div>
   );

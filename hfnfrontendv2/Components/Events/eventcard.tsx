@@ -1,7 +1,9 @@
 "use client";
-import moment from "moment";
 import Image from "next/image";
+import React from "react";
 import { imageProps } from "../client";
+import moment from "moment";
+import useCreateEvent from "../hooks/useCreateEvent";
 
 type PageProps = {
   data?: {
@@ -13,6 +15,7 @@ type PageProps = {
     hybrid: boolean;
     start_datetime: Date;
     end_datetime: Date;
+    location: string;
     image: {
       asset: {
         url: string;
@@ -21,13 +24,13 @@ type PageProps = {
   };
 };
 
-const Eventcard = ({ data }: PageProps) => {
+const eventcard = ({ data }: PageProps) => {
+  const [createEvent] = useCreateEvent();
   let date: string = "Not Set";
   if (data)
     date = moment(data.start_datetime)
       .format("MMMM Do YYYY, h:mm a")
       .toString();
-
   return (
     <div className="mt-10 cursor-pointer md:w-[25rem]">
       {data && (
@@ -46,11 +49,11 @@ const Eventcard = ({ data }: PageProps) => {
           />
         </div>
       )}
-      <div className="text-black mt-4 px-3">
-        <h3 className="text-lg">{data?.title}</h3>
+      <div className="text-white mt-4 px-3">
+        <h3 className="text-lg md:text-xl">{data?.title}</h3>
         <div className="text-xxs font-medium flex my-1">
-          <p className="border-r-2 pr-3 border-r-green">{date}</p>
-          <p className="pl-3">
+          <p className="border-r-2 pr-3 border-r-green md:text-sm">{date}</p>
+          <p className="pl-3 md:text-sm">
             {data?.hybrid
               ? "Hybrid"
               : data?.in_person
@@ -60,13 +63,16 @@ const Eventcard = ({ data }: PageProps) => {
               : "Unkown"}
           </p>
         </div>
-        <p className="text-xs mt-2">{data?.details}</p>
-        <button className="bg-black text-white px-10 py-3 rounded-full mt-6">
-          Register now
+        <p className="text-xs mt-2 md:text-lg">{data?.details}</p>
+        <button
+          onClick={() => createEvent(data)}
+          className="text-white bg-green px-10 py-2 font-medium rounded-full mt-4 md:text-sm"
+        >
+          Schedule
         </button>
       </div>
     </div>
   );
 };
 
-export default Eventcard;
+export default eventcard;

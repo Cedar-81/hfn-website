@@ -1,7 +1,10 @@
+"use client";
 import React from "react";
 import Gencard from "../Generic/gencard";
+import useFetchBlog from "../hooks/useFetchBlog";
 
 const Trending = () => {
+  const [allblogs, loadmore, loadedall] = useFetchBlog(true);
   return (
     <div className="bg-black text-white pt-[6rem] px-[5%] md:mt-[8rem]">
       <h2 className="text-green mx-auto text-center pt-[4rem] md:text-lg">
@@ -12,9 +15,9 @@ const Trending = () => {
       </h3>
 
       <div className=" flex overflow-x-auto gap-10 pb-10 snap-x md:overflow-hidden md:justify-around">
-        <Gencard schedule={false} img={"/assets/blogimg4.png"} />
-        <Gencard schedule={false} img={"/assets/blogimg4.png"} />
-        <Gencard schedule={false} img={"/assets/blogimg4.png"} />
+        {allblogs?.map((blog) => (
+          <Gencard data={blog} schedule={false} />
+        ))}
       </div>
     </div>
   );

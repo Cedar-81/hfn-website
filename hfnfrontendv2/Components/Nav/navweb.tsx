@@ -1,10 +1,14 @@
-"use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { Tooltip as ReactTooltip } from "react-tooltip";
+import useAuth from "../hooks/useAuth";
 
 const Navweb = () => {
+  const [handleLogin, handleLogout, session, status] = useAuth();
   let path = usePathname();
+
   useEffect(() => {
     if (path == "/") path = "/home";
     if (path !== null) {
@@ -24,39 +28,65 @@ const Navweb = () => {
   };
 
   return (
-    <nav className="flex w-full justify-between px-[5%] bg-white md:fixed top-0 z-40 py-3 items-center">
-      <p className="text-xl">LOGO</p>
-      <div className="hidden w-[40%] h-full lg:flex justify-between items-center ">
-        <div id="home" onClick={activate} className="navitem">
-          <Link href={"/"}>
-            <p className="text-lg navitem">Home</p>
-          </Link>
+    <div className="relative h-[5rem]">
+      <nav className="flex w-full justify-between px-[5%] bg-white md:fixed top-0 z-40 py-3 items-center">
+        <p className="text-xl">LOGO</p>
+        <div className="hidden w-[40%] h-full lg:flex justify-between items-center ">
+          <div id="home" onClick={activate} className="navitem">
+            <Link href={"/"}>
+              <p className="text-lg navitem">Home</p>
+            </Link>
+          </div>
+          <div id="about" onClick={activate} className="navitem">
+            <Link href={"/about"}>
+              <p className="text-lg navitem">About</p>
+            </Link>
+          </div>
+          <div id="blogs" onClick={activate} className="navitem">
+            <Link href={"/blogs"}>
+              <p className="text-lg navitem">Blogs</p>
+            </Link>
+          </div>
+          <div id="learn" onClick={activate} className="navitem">
+            <Link href={"/learn"}>
+              <p className="text-lg navitem">Learn</p>
+            </Link>
+          </div>
+          <div id="events" onClick={activate} className="navitem">
+            <Link href={"/events"}>
+              <p className="text-lg navitem">Events</p>
+            </Link>
+          </div>
         </div>
-        <div id="about" onClick={activate} className="navitem">
-          <Link href={"/about"}>
-            <p className="text-lg navitem">About</p>
-          </Link>
+        <div className="flex items-center">
+          <button className="text-white bg-red px-10 animate-pulse py-2 font-medium rounded-full">
+            Support
+          </button>
+          {status == "loading" ? (
+            <AiOutlineLoading3Quarters className="text-lg animate-spin ml-4 text-green" />
+          ) : session && session.user && session.user.picture ? (
+            <>
+              <img
+                src={session.user.picture}
+                alt="profile image"
+                id="profile"
+                onClick={handleLogout}
+                data-tooltip-content="Click to logout"
+                className="h-[2.5rem] w-[2.5rem] border-2 border-green rounded-full ml-4 cursor-pointer"
+              />
+              <ReactTooltip anchorId="profile" />
+            </>
+          ) : (
+            <button
+              onClick={handleLogin}
+              className="text-black bg-none px-10 py-2 font-medium rounded-full"
+            >
+              Sign In
+            </button>
+          )}
         </div>
-        <div id="blogs" onClick={activate} className="navitem">
-          <Link href={"/blogs"}>
-            <p className="text-lg navitem">Blogs</p>
-          </Link>
-        </div>
-        <div id="learn" onClick={activate} className="navitem">
-          <Link href={"/learn"}>
-            <p className="text-lg navitem">Learn</p>
-          </Link>
-        </div>
-        <div id="events" onClick={activate} className="navitem">
-          <Link href={"/events"}>
-            <p className="text-lg navitem">Events</p>
-          </Link>
-        </div>
-      </div>
-      <button className="text-white bg-red px-10 animate-pulse py-2 font-medium rounded-full">
-        Support
-      </button>
-    </nav>
+      </nav>
+    </div>
   );
 };
 

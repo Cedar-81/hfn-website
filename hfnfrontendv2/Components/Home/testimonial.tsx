@@ -1,10 +1,16 @@
+"use client";
 import React from "react";
 import Testimonialcard from "./testimonialcard";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper";
+
+import "swiper/swiper.min.css";
+import "swiper/css/pagination";
 
 const Testimonial = () => {
   return (
-    <div className="bg-black text-white px-[5%] py-[5rem] md:flex">
-      <div className="md:min-w-[50%] pr-[3rem]">
+    <div className="bg-black text-white px-[5%] py-[5rem] md:flex md:justify-evenly">
+      <div className="md:w-[45%] pr-[3rem]">
         <ul className="border-2 border-green w-20 mb-2" />
         <h3 className="text-xl font-medium mb-8 md:text-3xl">
           Unheard Voices.
@@ -23,10 +29,26 @@ const Testimonial = () => {
         </p>
       </div>
 
-      <div className="mt-12 flex overflow-x-scroll gap-10 snap-x md:mt-0">
-        <Testimonialcard />
-        <Testimonialcard />
-        <Testimonialcard />
+      <div className="mt-12 md:mt-0 md:w-[30rem]">
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={1}
+          modules={[Pagination]}
+          pagination={true}
+        >
+          <SwiperSlide>
+            <Testimonialcard />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Testimonialcard />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Testimonialcard />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Testimonialcard />
+          </SwiperSlide>
+        </Swiper>
       </div>
     </div>
   );

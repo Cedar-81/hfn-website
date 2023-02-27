@@ -1,7 +1,9 @@
 import React from "react";
 import Gencard from "../Generic/gencard";
+import useFetchLearn from "../hooks/useFetchLearn";
 
 const Concluded = () => {
+  const [articles, loadmore, loadedall] = useFetchLearn(false);
   return (
     <div className="bg-black text-white pt-[4rem] px-[5%]">
       <h2 className="text-green mx-auto text-center pt-[4rem] md:text-lg">
@@ -12,15 +14,20 @@ const Concluded = () => {
       </h3>
 
       <div className=" flex flex-col justify-evenly gap-10 md:flex-row md:flex-wrap">
-        <Gencard schedule={false} img={"/assets/blogimg4.png"} />
-        <Gencard schedule={false} img={"/assets/blogimg4.png"} />
-        <Gencard schedule={false} img={"/assets/blogimg4.png"} />
+        {articles?.map((article) => (
+          <Gencard data={article} schedule={false} />
+        ))}
       </div>
 
-      <div className="w-full flex justify-center">
-        <button className="text-white bg-green px-10 mx-auto py-3 font-medium rounded-full mt-12 mb-8">
-          Load More
-        </button>
+      <div className="w-full flex justify-center pt-12 pb-8b">
+        {!loadedall && (
+          <button
+            onClick={loadmore}
+            className="text-white md:mx-auto bg-green px-10 mx-auto py-3 font-medium rounded-full "
+          >
+            Load More
+          </button>
+        )}
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Banner from "../Components/Home/banner";
 import About from "../Components/Home/about";
