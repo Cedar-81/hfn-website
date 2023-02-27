@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { client } from "../client";
 
-const useAuth = () => {
+const useAuth = (): any => {
   const { data: session, status } = useSession();
 
   if (status === "authenticated") {
