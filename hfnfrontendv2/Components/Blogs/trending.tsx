@@ -15,8 +15,8 @@ const Trending = () => {
       </h3>
 
       <div className=" flex overflow-x-auto gap-10 pb-10 snap-x md:overflow-hidden md:justify-around">
-        {allblogs?.map((blog) => (
-          <Gencard data={blog} schedule={false} />
+        {allblogs?.map((blog: any, index) => (
+          <Gencard key={index} data={blog} schedule={false} />
         ))}
       </div>
     </div>

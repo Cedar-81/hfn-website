@@ -15,8 +15,8 @@ const Events = () => {
       </div>
 
       <div className="mt-[4rem] md:flex md:gap-[5rem] md:flex-wrap md:justify-evenly">
-        {allevents?.map((event) => (
-          <Eventcard data={event} />
+        {allevents?.map((event: any, index) => (
+          <Eventcard key={index} data={event} />
         ))}
       </div>
     </div>

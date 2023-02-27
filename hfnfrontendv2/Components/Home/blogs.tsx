@@ -16,8 +16,8 @@ const Blogs = () => {
       </div>
 
       <div className="mt-[4rem] md:flex md:gap-[5rem] md:flex-wrap md:justify-evenly">
-        {allblogdata?.map(({ data }: any) => (
-          <Link href={"blogs/" + data.url_slug.current}>
+        {allblogdata?.map((data: any, index) => (
+          <Link key={index} href={"blogs/" + data.url_slug.current}>
             <Blogcard img="something" data={data} />
           </Link>
         ))}

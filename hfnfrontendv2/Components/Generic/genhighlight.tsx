@@ -8,6 +8,7 @@ import { Pagination, Navigation } from "swiper";
 import "swiper/swiper.min.css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { indexing_v3 } from "googleapis";
 
 type PageProp = {
   title: string;
@@ -27,8 +28,8 @@ type PageProp = {
 };
 
 const Genhighlight = ({ title, data }: PageProp) => {
-  const blogs = data?.map((item) => (
-    <SwiperSlide>
+  const blogs = data?.map((item, index) => (
+    <SwiperSlide key={index}>
       <div className="highlightimg relative h-[30rem] w-full bg-no-repeat bg-cover bg-center ">
         {data && (
           <div className="h-full relative">

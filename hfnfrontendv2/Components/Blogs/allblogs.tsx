@@ -22,8 +22,8 @@ const Allblogs = () => {
           <AiOutlineLoading3Quarters className="animate-spin" />
         )}
         {status === "loaded" &&
-          allblogs?.map((blog: any) => (
-            <Gencard data={blog} schedule={false} />
+          allblogs?.map((blog: any, index) => (
+            <Gencard key={index} data={blog} schedule={false} />
           ))}
       </div>
 

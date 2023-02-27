@@ -14,8 +14,8 @@ const Concluded = () => {
       </h3>
 
       <div className=" flex flex-col justify-evenly gap-10 md:flex-row md:flex-wrap">
-        {articles?.map((article) => (
-          <Gencard data={article} schedule={false} />
+        {articles?.map((article: any, index) => (
+          <Gencard key={index} data={article} schedule={false} />
         ))}
       </div>
 

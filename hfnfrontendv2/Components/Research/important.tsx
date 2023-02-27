@@ -14,8 +14,8 @@ const Important = () => {
       </h3>
 
       <div className=" flex overflow-x-scroll gap-10 pb-10 snap-x lg:overflow-hidden lg:flex-wrap lg:gap-[5rem] lg:justify-evenly ">
-        {articles?.map((article) => (
-          <Gencard data={article} schedule={false} />
+        {articles?.map((article: any, index) => (
+          <Gencard key={index} data={article} schedule={false} />
         ))}
       </div>
     </div>
