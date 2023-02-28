@@ -8,7 +8,6 @@ import { Pagination, Navigation } from "swiper";
 import "swiper/swiper.min.css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { indexing_v3 } from "googleapis";
 
 type PageProp = {
   title: string;

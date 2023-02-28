@@ -2,10 +2,11 @@
 import React from "react";
 import Testimonialcard from "./testimonialcard";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { Pagination, Navigation } from "swiper";
 
 import "swiper/swiper.min.css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const Testimonial = () => {
   return (
@@ -33,8 +34,10 @@ const Testimonial = () => {
         <Swiper
           spaceBetween={50}
           slidesPerView={1}
-          modules={[Pagination]}
+          modules={[Pagination, Navigation]}
           pagination={true}
+          navigation={true}
+          className="swiper"
         >
           <SwiperSlide>
             <Testimonialcard />

@@ -1,6 +1,6 @@
 import React, { use, useState } from "react";
 import useFetchEvent from "../hooks/useFetchEvent";
-import Eventcard from "./eventcard";
+import Eventcard from "../Home/eventcard";
 
 const Events = () => {
   const [allevents, loadmore, loadedall] = useFetchEvent();

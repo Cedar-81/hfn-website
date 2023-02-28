@@ -11,7 +11,7 @@ const Schedule = () => {
         SCHEDULE FOR LATER
       </h2>
 
-      <div className=" flex overflow-x-auto gap-10 pb-10 snap-x md:flex-wrap md:justify-evenly md:mt-[4rem]">
+      <div className=" flex flex-col md:flex-row gap-10 pb-10 snap-x md:flex-wrap md:justify-evenly md:mt-[4rem]">
         {allevents?.map((event: any, index) => (
           <Eventcard key={index} data={event} />
         ))}
