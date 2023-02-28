@@ -27,8 +27,8 @@ type PageProp = {
   ];
 };
 
-const Genhighlight = ({ title, data }: PageProp) => {
-  const blogs = data?.map((item, index) => (
+const Genhighlight = ({ title, data }: any) => {
+  const blogs = data?.map((item: any, index: any) => (
     <SwiperSlide key={index}>
       <div className="highlightimg relative h-[30rem] w-full bg-no-repeat bg-cover bg-center ">
         {data && (
