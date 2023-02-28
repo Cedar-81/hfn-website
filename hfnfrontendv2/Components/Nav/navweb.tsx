@@ -58,8 +58,8 @@ const Navweb = () => {
             </Link>
           </div>
         </div>
-        <div className="flex items-center">
-          <button className="text-white bg-red px-10 animate-pulse py-2 font-medium rounded-full">
+        <div className="flex items-center gap-2">
+          <button className="text-white bg-red px-10 text-xs md:text-base animate-pulse py-2 font-medium rounded-full">
             Support
           </button>
           {status == "loading" ? (
@@ -79,7 +79,7 @@ const Navweb = () => {
           ) : (
             <button
               onClick={handleLogin}
-              className="text-black bg-none px-10 py-2 font-medium rounded-full"
+              className="text-black bg-none px-10 py-2 border-2 border-green text-xs  md:text-base font-medium rounded-full"
             >
               Sign In
             </button>

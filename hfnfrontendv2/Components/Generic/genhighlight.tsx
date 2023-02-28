@@ -43,13 +43,13 @@ const Genhighlight = ({ title, data }: any) => {
               //@ts-ignore
               loader={imageProps(item).loader}
               alt={item ? item?.image_alt_text : "blog image"}
-              className="w-full rounded-3xl z-0"
+              className="w-full md:rounded-3xl z-0"
             />
           </div>
         )}
         <div className="absolute bottom-8 px-4 text-white z-10 md:ml-[4rem] md:mb-8">
-          <h2 className="text-xl md:w-[50%]">{item?.title}</h2>
-          <p className="mt-4 md:w-[70%]">
+          <h2 className=" md:text-xl text-lg md:w-[50%]">{item?.title}</h2>
+          <p className="mt-4 text-sm md:text-base md:w-[70%]">
             {item?.summary
               ? item?.summary.slice(0, 300) + "..."
               : item.details?.slice(0, 300) + "..."}

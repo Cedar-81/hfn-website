@@ -6,7 +6,7 @@ type PageProp = {
 
 const Genbanner = ({ title }: PageProp) => {
   return (
-    <div className="w-full flex flex-col px-[5%] border-2 relative justify-center items-center h-[70vh]">
+    <div className="w-full flex flex-col px-[5%] relative justify-center items-center h-[70vh]">
       <h1 className="text-2xl text-center p-[5%] md:p-0  text-green font-medium md:text-h3">
         {title}
       </h1>
