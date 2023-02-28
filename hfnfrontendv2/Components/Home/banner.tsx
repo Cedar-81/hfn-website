@@ -1,7 +1,9 @@
 import Image from "next/image";
 import React from "react";
+import { useFlutterPay } from "../hooks/useFlutterPay";
 
 const Banner = () => {
+  const [makePayment] = useFlutterPay();
   return (
     <div className="">
       <div className="h-screen overflow-y-hidden overflow-x-hidden relative">
@@ -49,7 +51,10 @@ const Banner = () => {
             <button className="px-8 py-2 md:px-[3.5rem] md:my-[2rem] md:text-lg bg-red rounded-full text-white font-medium">
               Enquire
             </button>
-            <button className="px-8 py-2 md:px-[3.5rem] md:my-[2rem] md:text-lg border-2 rounded-full text-red bg-white animate-bounce font-medium">
+            <button
+              onClick={makePayment}
+              className="px-8 py-2 md:px-[3.5rem] md:my-[2rem] md:text-lg border-2 rounded-full text-red bg-white animate-bounce font-medium"
+            >
               Support
             </button>
           </div>

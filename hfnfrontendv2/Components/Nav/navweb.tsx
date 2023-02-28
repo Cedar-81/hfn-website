@@ -4,9 +4,11 @@ import React, { useEffect, useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import useAuth from "../hooks/useAuth";
+import { useFlutterPay } from "../hooks/useFlutterPay";
 
 const Navweb = () => {
   const [handleLogin, handleLogout, session, status] = useAuth();
+  const [makePayment] = useFlutterPay();
   let path = usePathname();
 
   useEffect(() => {
@@ -59,7 +61,10 @@ const Navweb = () => {
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <button className="text-white bg-red px-10 text-xs md:text-base animate-pulse py-2 font-medium rounded-full">
+          <button
+            onClick={makePayment}
+            className="text-white bg-red px-10 text-xs md:text-base animate-pulse py-2 font-medium rounded-full"
+          >
             Support
           </button>
           {status == "loading" ? (
