@@ -5,17 +5,23 @@ const Opportunity = () => {
         <h2 className="text-2xl leading-snug text-center mb-4 md:text-3xl">
           Equal Opportunities for Everyone.
         </h2>
-        <p className="text-sm text-center mb-10 md:mb-[6rem] md:text-base lg:w-[60%] mx-auto">
-          Lörem ipsum intrarar rosåbelt. Kenös tefangen nörofud önar. Flygskam
-          sugt såväl som fämiss. Homolig ära oronera med nevys. Tetravalig
-          supranöll det vill säga vårdskuld. Dagshandlare ögonkramp ysamma
-          cringe. Safariforskning befen i autonörat ultrande. Bektigt halvpudel
-          preker desiv. Julangar epidess. Höngar spefoktig i spetspatient att
-          gigadat. <br />
-          Spen autong och töt syvynol. Ståpaddling bede ninas tiktig. Jusam
-          semill rasifierad dinas. Diligt dossade. Pona parasyde. Men ponode
-          sedan heminde. Exoronat antel masa. Favis. Dekanera revudyligt medan
-          kroska. Fumägt vahör eller dir på infrar.
+        <p className="text-sm text-left mb-10 md:mb-[6rem] md:text-base lg:w-[60%] mx-auto">
+          At Young With Haemophilia, we believe that everyone deserves equal
+          opportunities, regardless of their condition. That's why we're
+          committed to creating a community that is open, welcoming, and
+          inclusive of all individuals living with haemophilia. We recognize
+          that this condition can be isolating, and our goal is to provide a
+          space where people can connect with others who understand what they're
+          going through. We also understand that people with haemophilia face
+          unique challenges in their daily lives, and we strive to advocate for
+          equal access to healthcare, education, and other resources that can
+          improve their quality of life. <br />
+          <br />
+          We're committed to creating a safe and supportive environment where
+          everyone can feel valued and empowered. Whether you're newly diagnosed
+          or have been living with haemophilia for years, we welcome you to join
+          our community and share your experiences with us. Together, we can
+          work towards a more inclusive future for people with haemophilia.
         </p>
       </div>
       <img className="w-full" alt="" src="/assets/oppimg.png" />

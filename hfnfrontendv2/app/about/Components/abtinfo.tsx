@@ -26,7 +26,9 @@ const Abtinfo = () => {
 
       <div className="px-[5%]">
         <p className=" text-sm md:text-base">
-          <span className="text-xl font-md md:2xl">Y</span>
+          <span className="text-xl font-md md:2xl text-green font-semibold">
+            Y
+          </span>
           oung With Haemophilia is a community founded by Divinewisdom Ugwuanyi
           to connect and support young people with haemophilia in Nigeria. As
           someone who has experienced firsthand the challenges and isolation
@@ -52,6 +54,9 @@ const Abtinfo = () => {
           information, and make a difference in the lives of young people with
           haemophilia in Nigeria.
         </p>
+        <button className="px-8 py-2 bg-green text-white rounded-full mt-4">
+          Join the community.
+        </button>
       </div>
     </div>
   );

@@ -2,21 +2,16 @@ import React from "react";
 
 type PageProp = {
   title: string;
+  text: string;
   buttonText: string;
 };
 
-const Info = ({ title, buttonText }: PageProp) => {
+const Info = ({ title, text, buttonText }: PageProp) => {
   return (
     <div className="md:flex md:items-center">
       <div className="md:w-[50%]">
         <h4 className="text-lg font-medium mt-8 md:text-2xl">{title}</h4>
-        <p className="text-sm mt-4">
-          Fusce nascetur habitasse pretium facilisi pharetra in venenatis
-          suscipit aliquet curae vel neque, ultricies nec purus et class
-          faucibus integer lacus donec vitae. Eget montes conubia donec
-          phasellus arcu per, in nam eros scelerisque suspendisse porta morbi,
-          class proin accumsan curabitur pharetra.
-        </p>
+        <p className="text-sm mt-4">{text}</p>
         <button className="px-8 py-2 bg-red text-white rounded-full mt-4">
           {buttonText}
         </button>
