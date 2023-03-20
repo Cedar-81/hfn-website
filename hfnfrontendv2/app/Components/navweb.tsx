@@ -30,7 +30,7 @@ const Navweb = () => {
 
   return (
     <div className="relative h-[4rem]">
-      <nav className="flex w-full border-b-2 border-b-green justify-between px-[5%] bg-white fixed top-0 z-40 py-3 items-center">
+      <nav className="flex w-full border-b-2 border-b-green justify-between px-[5%] bg-white fixed top-0 z-30 py-3 items-center">
         <p className="text-xl">LOGO</p>
         <div className="hidden w-[40%] h-full lg:flex justify-between items-center ">
           <div id="home" onClick={activate} className="navitem">

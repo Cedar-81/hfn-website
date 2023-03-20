@@ -17,12 +17,17 @@ const Navmobile = () => {
     <nav className="lg:hidden z-30 fixed bottom-0 text-black w-screen border-t-2 border-t-green bg-white">
       {opensidebar && (
         <div className="h-screen animate-slide_in w-[75%] pl-8 pt-10 left-0 fixed z-40 bg-white top-0">
+          <Link href="/" className="flex items-center mb-8">
+            <p className="text-lg font-medium">Home</p>
+          </Link>
+          <Link href="/blogs" className="flex items-center mb-8">
+            <p className="text-lg font-medium">Blog</p>
+          </Link>
           <Link
             onClick={handleSidebar}
             href="/about"
             className="flex items-center mb-8"
           >
-            <BiBookReader className="text-2xl mr-3" />
             <p className="text-lg font-medium">About</p>
           </Link>
           <Link
@@ -30,7 +35,6 @@ const Navmobile = () => {
             href="/events"
             className="flex items-center mb-8"
           >
-            <BiCalendarEvent className="text-2xl mr-3" />
             <p className="text-lg font-medium">Events</p>
           </Link>
           {/* <Link
