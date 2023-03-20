@@ -9,7 +9,7 @@ const Nocontent = ({ dark }: PageParams) => {
     dark: "w-full mt-[4rem] flex flex-col items-center text-white/50",
     light: "w-full mt-[4rem] flex flex-col items-center text-black/50",
   };
-  console.log("dark", dark);
+
   return (
     <div className={dark ? styles.dark : styles.light}>
       <FaRunning className="h-[5rem] w-[5rem]" />

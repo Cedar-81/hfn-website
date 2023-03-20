@@ -9,8 +9,6 @@ const Schedule = () => {
   const { data, isLoading, isError } = useFetchEvent2();
   const [slicedData, loadMore] = useLoadMore(data);
 
-  console.log("data", data && data.length < 1);
-
   return (
     <div className="bg-black text-white pt-[6rem] px-[5%] md:mt-[8rem]">
       <h2 className="text-green mx-auto text-center md:text-lg pt-[4rem]">
@@ -22,8 +20,8 @@ const Schedule = () => {
       <div className="md:grid md:grid-cols-3 md:justify-items-center gap-10 pb-10 md:mt-[4rem]">
         {isLoading && (
           <div className="md:grid md:grid-cols-2 space-y-6 w-full md:justify-items-center">
-            <Loading />
-            <Loading />
+            <Loading dark={true} />
+            <Loading dark={true} />
           </div>
         )}
         {slicedData?.map((event) => (

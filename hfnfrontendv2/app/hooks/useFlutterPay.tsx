@@ -27,7 +27,6 @@ export const useFlutterPay = () => {
     () => {
       handleFlutterPayment({
         callback: (response) => {
-          console.log(response);
           closePaymentModal();
         },
         onClose: () => {},

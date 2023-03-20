@@ -22,8 +22,8 @@ const Events = () => {
       <div className="mt-[4rem] md:grid md:grid-cols-3 md:justify-items-center">
         {isLoading && (
           <div className="md:grid md:grid-cols-2 space-y-6 w-full md:justify-items-center">
-            <Loading />
-            <Loading />
+            <Loading dark={false} />
+            <Loading dark={false} />
           </div>
         )}
         {data?.map((event) => (

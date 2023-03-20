@@ -14,7 +14,7 @@ const Allblogs = () => {
       <h2 className="text-green mx-auto text-center pt-[4rem] md:text-lg">
         ALL BLOGS
       </h2>
-      <h3 className="text-xl text-center mx-auto py-8 leading-snug md:text-3xl md:w-[60%]">
+      <h3 className="text-lg lg:text-xl text-center mx-auto py-8 leading-snug md:text-3xl md:w-[60%]">
         Here are some other great topics. It&lsquo;s definitely worth a read.
       </h3>
 
@@ -23,8 +23,8 @@ const Allblogs = () => {
       <div className=" flex flex-col justify-evenly gap-10 md:flex-wrap md:flex-row">
         {isLoading && (
           <div className="md:grid md:grid-cols-2 space-y-6 w-full md:justify-items-center">
-            <Loading />
-            <Loading />
+            <Loading dark={true} />
+            <Loading dark={true} />
           </div>
         )}
         {slicedData?.map((blog) => (

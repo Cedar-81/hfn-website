@@ -23,8 +23,8 @@ const Blogs = () => {
       <div className="mt-[4rem] md:flex md:gap-[5rem] md:flex-wrap md:justify-evenly">
         {isLoading && (
           <div className="md:grid md:grid-cols-2 space-y-6 w-full md:justify-items-center">
-            <Loading />
-            <Loading />
+            <Loading dark={true} />
+            <Loading dark={true} />
           </div>
         )}
         {data?.slice(0, 4).map((data) => (
