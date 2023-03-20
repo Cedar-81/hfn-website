@@ -1,9 +1,8 @@
-import React from "react";
-import Banner from "../../Components/About/banner";
-import Abtinfo from "../../Components/About/abtinfo";
-import Moreinfo from "../../Components/About/moreinfo";
-import Opportunity from "../../Components/About/opportunity";
-import Testimonial from "../../Components/Home/testimonial";
+import Banner from "./Components/banner";
+import Abtinfo from "./Components/abtinfo";
+import Moreinfo from "./Components/moreinfo";
+import Opportunity from "./Components/opportunity";
+import Testimonial from "../Components/testimonial";
 
 const About = () => {
   return (

@@ -1,6 +1,6 @@
 "use client";
-import Navmobile from "@/Components/Nav/navmobile";
-import Navweb from "@/Components/Nav/navweb";
+import Navmobile from "./Components/navmobile";
+import Navweb from "./Components/navweb";
 
 export const Header = () => {
   return (

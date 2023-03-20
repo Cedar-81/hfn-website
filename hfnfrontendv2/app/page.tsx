@@ -1,12 +1,10 @@
-"use client";
-import React from "react";
-import Banner from "../Components/Home/banner";
-import About from "../Components/Home/about";
-import Beaware from "../Components/Home/beaware";
-import Blogs from "../Components/Home/blogs";
-import Swelling from "../Components/Home/swelling";
-import Events from "../Components/Home/events";
-import Testimonial from "../Components/Home/testimonial";
+import Banner from "./Components/banner";
+import About from "./Components/about";
+import Beaware from "./Components/beaware";
+import Blogs from "./Components/blogs";
+import Swelling from "./Components/swelling";
+import Events from "./Components/events";
+import Testimonial from "./Components/testimonial";
 
 const Home = () => {
   return (

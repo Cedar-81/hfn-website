@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import "react-tooltip/dist/react-tooltip.css";
 import Footer from "./Footer";
 import { Header } from "./Header";
+import ReactQueryWrapper from "./ReactQueryWrapper";
 import AuthContext from "./AuthContext";
 
 export default function RootLayout({
@@ -10,15 +11,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <AuthContext>
-      <html>
-        <head></head>
-        <body>
+    <html>
+      <head></head>
+      <body>
+        <AuthContext>
           <Header />
-          {children}
+          <ReactQueryWrapper>{children}</ReactQueryWrapper>
           <Footer />
-        </body>
-      </html>
-    </AuthContext>
+        </AuthContext>
+      </body>
+    </html>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Blogdetails from "@/Components/Blogs/blogdetails";
+import Blogdetails from "@/app/blogs/Components/blogdetails";
 
 type PageProps = {
   params: {

@@ -1,7 +1,5 @@
-import { client } from "@/Components/client";
 import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google";
-import { tokenToString } from "typescript";
 
 type userInfoType = {
   _id: string;

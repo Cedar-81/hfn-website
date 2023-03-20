@@ -1,17 +1,13 @@
-"use client";
-import React from "react";
-import Genbanner from "../../Components/Generic/genbanner";
-import Genhighlight from "../../Components/Generic/genhighlight";
-import Important from "../../Components/Research/important";
-import Concluded from "../../Components/Research/concluded";
-import useFetchLearn from "@/Components/hooks/useFetchLearn";
+import Banner from "./Components/banner";
+import Highlight from "./Components/highlight";
+import Important from "./Components/important";
+import Concluded from "./Components/concluded";
 
 const Learn = () => {
-  const [learn, loadamt, loadedall] = useFetchLearn(false);
   return (
     <div>
-      <Genbanner title={"Learn"} />
-      <Genhighlight title={"Learn"} data={learn} />
+      <Banner />
+      <Highlight />
       <Important />
       <Concluded />
     </div>
