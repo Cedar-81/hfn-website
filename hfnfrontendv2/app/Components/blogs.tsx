@@ -18,7 +18,7 @@ const Blogs = () => {
         </p>
       </div>
 
-      {data && data.length < 1 && <Nocontent dark={false} />}
+      {data && data.length < 1 && <Nocontent dark={true} />}
 
       <div className="mt-[4rem] md:flex md:gap-[5rem] md:flex-wrap md:justify-evenly">
         {isLoading && (
