@@ -19,9 +19,11 @@ const About = () => {
           experiences, and learn from each other.
         </p>
         <div className="flex mt-8 ">
-          <button className="px-8 py-2 md:px-[3.5rem] md:my-[2rem] md:text-lg bg-red rounded-full text-white font-medium">
-            Join
-          </button>
+          <a href="https://discord.gg/FSgqCAEnQp" target="_blank"> 
+            <button className="px-8 py-2 md:px-[3.5rem] md:my-[2rem] md:text-lg bg-red rounded-full text-white font-medium">
+              Join
+            </button>
+          </a>
           <button className="px-8 py-2 ml-4 md:px-[3.5rem] md:my-[2rem] md:text-lg border-2 border-red rounded-full text-red font-medium">
             Read More
           </button>
