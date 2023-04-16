@@ -54,9 +54,11 @@ const Abtinfo = () => {
           information, and make a difference in the lives of young people with
           haemophilia in Nigeria.
         </p>
-        <button className="px-8 py-2 bg-green text-white rounded-full mt-4">
-          Join the community.
-        </button>
+        <a href="https://discord.gg/FSgqCAEnQp" target="_blank"> 
+          <button className="px-8 py-2 bg-green text-white rounded-full mt-4">
+            Join the community.
+          </button>
+        </a>
       </div>
     </div>
   );
