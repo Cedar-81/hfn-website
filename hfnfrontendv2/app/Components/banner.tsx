@@ -46,9 +46,11 @@ const Banner = () => {
             with people living with Haemophila.
           </p>
           <div className="mt-8 flex justify-evenly md:w-[45%] md:mx-auto">
-            <button className="px-8 py-2 md:px-[3.5rem] md:my-[2rem] md:text-lg bg-red rounded-full text-white font-medium">
+            <a href="https://discord.gg/FSgqCAEnQp" target="_blank"> 
+              <button className="px-8 py-2 md:px-[3.5rem] md:my-[2rem] md:text-lg bg-red rounded-full text-white font-medium">
               Join
-            </button>
+              </button>
+            </a>
             <Supportbtn nav={false} />
           </div>
         </div>
